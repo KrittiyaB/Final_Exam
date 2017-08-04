@@ -38,11 +38,30 @@ public class MaxOrder {
         long tHun = tTenth%100;
         long dec = tHun/10;
         long dig = tHun%10;
-        //System.out.print(tenth+" "+hun+" "+dec+" "+dig);
         if(dig >= dec && dec >= hun && hun >= tenth){
             result = number;
         }else {
             result = checkOrder4(number);
+        }
+        return result;
+    }
+
+    public long checkOrder5(long number){
+        long result = -1;
+        number = number-1;
+        long tenThou = number/10000;
+        long tTenThou = number%10000;
+        long thou = tTenThou/1000;
+        long tThou = tTenThou%1000;
+        long hun = tThou/100;
+        long tHun = tThou%100;
+        long dec = tHun/10;
+        long dig = tHun%10;
+
+        if(dig >= dec && dec >= hun && hun >= thou && thou >= tenThou){
+            result = number;
+        }else {
+            result = checkOrder5(number);
         }
         return result;
     }
@@ -72,17 +91,31 @@ public class MaxOrder {
                     result = checkOrder3(input);
                 }
             }else if(input < 10000){
-                long tenth = input/1000;
-                long tTenth = input%1000;
-                long hun = tTenth/100;
-                long tHun = tTenth%100;
+                long thou = input/1000;
+                long tThou = input%1000;
+                long hun = tThou/100;
+                long tHun = tThou%100;
                 long dec = tHun/10;
                 long dig = tHun%10;
-                //System.out.print(tenth+" "+hun+" "+dec+" "+dig);
-                if(dig >= dec && dec >= hun && hun >= tenth){
+                if(dig >= dec && dec >= hun && hun >= thou){
                     result = input;
                 }else {
                     result = checkOrder4(input);
+                }
+            }else if(input < 100000){
+                long tenThou = input/10000;
+                long tTenThou = input%10000;
+                long thou = tTenThou/1000;
+                long tThou = tTenThou%1000;
+                long hun = tThou/100;
+                long tHun = tThou%100;
+                long dec = tHun/10;
+                long dig = tHun%10;
+
+                if(dig >= dec && dec >= hun && hun >= thou && thou >= tenThou){
+                    result = input;
+                }else {
+                    result = checkOrder5(input);
                 }
             }
         }

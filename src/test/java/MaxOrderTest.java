@@ -58,4 +58,11 @@ public class MaxOrderTest {
         long res =  maxOrder.getResult(3000);
         assertEquals(2999, res);
     }
+
+    @Test
+    public void test9(){
+        MaxOrder maxOrder = new MaxOrder();
+        long res =  maxOrder.getResult(30000);
+        assertEquals(29999, res);
+    }
 }

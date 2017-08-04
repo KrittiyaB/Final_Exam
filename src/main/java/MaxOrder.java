@@ -38,7 +38,7 @@ public class MaxOrder {
         long tHun = tTenth%100;
         long dec = tHun/10;
         long dig = tHun%10;
-        System.out.print(tenth+" "+hun+" "+dec+" "+dig);
+        //System.out.print(tenth+" "+hun+" "+dec+" "+dig);
         if(dig >= dec && dec >= hun && hun >= tenth){
             result = number;
         }else {
@@ -78,7 +78,7 @@ public class MaxOrder {
                 long tHun = tTenth%100;
                 long dec = tHun/10;
                 long dig = tHun%10;
-                System.out.print(tenth+" "+hun+" "+dec+" "+dig);
+                //System.out.print(tenth+" "+hun+" "+dec+" "+dig);
                 if(dig >= dec && dec >= hun && hun >= tenth){
                     result = input;
                 }else {
